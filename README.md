@@ -101,4 +101,8 @@ $ go get github.com/yosugi/md2tt
 
 ## License
 
-MIT LICENSE
+[MIT License](LICENSE)
+
+## Version
+
+0.1.0
