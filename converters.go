@@ -9,6 +9,16 @@ import (
 )
 
 // string -> Freeze
+func link(line string) freeze.Freeze {
+    pattern := `\[(.*?)\]\((.*?)\)`
+    re := regexp.MustCompile(pattern)
+
+	replacedLine := re.ReplaceAllString(line, `"$1":$2`)
+
+	return freeze.Wrap(replacedLine)
+}
+
+// string -> Freeze
 func heading(line string) freeze.Freeze {
 	pattern := "^#*"
 	re := regexp.MustCompile(pattern)

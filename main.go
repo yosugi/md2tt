@@ -15,6 +15,7 @@ const defaultIndent = 4
 // int -> (Freeze -> Freeze)
 func md2tt(indent int) func(string) {
 	composed := functional.Compose(
+		freeze.Then(link),
 		freeze.Then(heading),
 		freeze.Then(bulletList(indent)),
 		freeze.Then(numberedList(indent)),
